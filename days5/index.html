@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="./libs/angular.min.js"></script>
+
+</head>
+<style>
+</style>
+
+<body ng-app="myapp">
+    <!-- <div ng-controller="demoController">
+        <h1>{{welcome}}</h1>
+        <h1 ng-bind="welcome">{{welcome}}</h1>
+    </div> -->
+    <div ng-controller="infoController">
+        <table class="table table-striped">
+            <tr>
+                <th>Họ Tên</th>
+                <th>Tuổi</th>
+                <th>Số Điện Thoại</th>
+            </tr>
+            <tr ng-repeat="i in luan">
+                <td>{{i.name}}</td>
+                <td>{{i.age}}</td>
+                <th>{{i.sdt}}</th>
+            </tr>
+        </table>
+        <input type="text" class="form-control" ng-model="test">
+        <select class="form-control" ng-model="tinh">
+            <option value="1">Hà Nội</option>
+            <option value="2">Hà Giang</option>
+            <option value="3">Hà Giang</option>
+        </select> </br>
+        <input type="radio" ng-model="gender" class="form-radio" value="1" >Nam
+        <input type="radio" ng-model="gender" class="form-radio"  value="2" >Nữ
+        <h1>{{hihi}}</h1>
+        <button ng-click="say()">Test</button>
+        <h1 ng-mousemove="Mymouse()">Movemouse</h1>
+        <h3 ng-bind="count"></h3>
+       
+    </div>
+</body>
+<script src="./app.js"></script>
+<!-- <script>
+    // viết chuẩn
+    // function myFunc($scope) {// luôn luôn có đối với mỗi Func
+        $scope.welcome = "hihi" // sau dấu Chấm scope là tên biến định nghĩa render ra khu vực demoController
+    }
+    // khai báo vùng sử dụng angular trên html
+    // var app = angular.module("myapp", []);
+    // // sử dụng controller map với myFunc
+    // app.controller("demoController",myFunc)
+    // viết tắt
+    // app.controller("infoController",($scope)=>{
+    //     $scope.luan = [{
+    //         name: "luân",
+    //         age: 21,
+    //         sdt: "0334590019"
+    //     },{
+    //         name: "chiến",
+    //         age: 21,
+    //         sdt: "0334590019"
+    //     }]
+    // })
+</script> -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+
+</html>

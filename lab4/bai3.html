@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+
+<body ng-app="myApp">
+    <div ng-controller="myCtrl" class="container">
+        <form>
+            <div class="form-group">
+                <label class="form-label">Họ va tên</label>
+                    <input ng-model="student.fullname" type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="form-label">Ngày Sinh</label>
+
+                    <input ng-model="student.birday" type="date" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="form-label">Giới Tính</label>
+                <select ng-model="student.gender" class="form-control">
+                    <option>Nam</option>
+                    <option>Nữ</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>mark
+                    <input ng-model="student.diem" class="form-control" />
+            </div>
+            <div class=" form-group">
+                <label class="form-label">Hoc luc</label>
+                <div ng-bind="student.grade" class="form-control alert-info" >
+            </div>
+            <hr />
+            <div class="form-group">
+                <button class="btn btn-primary px-5 py-2" ng-click="save()">Grade</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("myCtrl", function ($scope) {
+            $scope.student = {};
+            $scope.save = function () {
+                if ($scope.student.diem < 5) {
+                    $scope.student.grade = "Rot";
+                } else {
+                    $scope.student.grade = "Dau";
+                }
+            }
+            });
+    </script>
+</body>
+
+</html>

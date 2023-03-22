@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+
+</head>
+
+<body>
+
+    <body ng-app="myapp">
+        <br />
+        <div class="container">
+            <div ng-controller="myCtrl2">
+                <table class="table table-striped">
+                    <tr>
+                        <th>Ảnh</th>
+                        <th>Ho va Tên</th>
+                        <th>Ngay sinh</th>
+                        <th>Điểm</th>
+                        <th></th>
+                    </tr>
+                    <tr ng-repeat="i in students">
+                        <td><img width="100" class="rounded" src="{{i.img}}" alt=""></td>
+                        <td>{{i.fullname}}</td>
+                        <td>{{i.birthday}}</td>
+                        <td>{{i.mark}}</td>
+                        <td>
+                            <a href="#" ng-click="edit(1)">Sửa</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <script>
+            var app = angular.module("myapp", []);
+            app.controller("myCtrl1", function ($scope) {
+            });
+            app.controller("myCtrl2", function ($scope) {
+                $scope.students = [
+                    {
+                        img: "https://res.cloudinary.com/kh-ng-cc/image/upload/v1677634356/php/aig7weoxqn5wcwhwta01.png",
+                        fullname: "luân",
+                        birthday: "2003",
+                        mark: 9,
+                        gender: "nam"
+                    },
+                    {
+                        img: "https://res.cloudinary.com/kh-ng-cc/image/upload/v1677634356/php/aig7weoxqn5wcwhwta01.png",
+                        fullname: "chiến",
+                        birthday: "2003",
+                        mark: 9,
+                        gender: "nam"
+                    }, {
+                        img: "https://res.cloudinary.com/kh-ng-cc/image/upload/v1677634356/php/aig7weoxqn5wcwhwta01.png",
+                        fullname: "chiến",
+                        birthday: "2003",
+                        mark: 9,
+                        gender: "nam"
+                    },
+                ];
+            });
+        </script>
+    </body>
+</body>
+
+</html>
