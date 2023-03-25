@@ -14,10 +14,27 @@ window.InfoController = function($scope,$routeParams){
         ten:false, // chưa Có Lỗi
         songaynamvien: false
     }
-    $scope.name = $routeParams.name;
+    switch ($routeParams.name) {
+        case 'nhan_vien':
+            $scope.per = "Nhân Viên";
+            $scope.tien = [700, 1200, 2400];
+            break;
+        case 'can_bo':
+            $scope.per = "Cán Bộ";
+            $scope.tien = [1000, 2000, 3000];
+            break;
+        case 'quan_ly':
+            $scope.per = "Quản Lý";
+            $scope.tien =  [2000, 4000, 6000];
+            break;
+    }
     $scope.onSubmitForm = function (){
-    $scope.name = $routeParams.name;
-     
+        $scope.kiemTraDuLieu = {
+            ten:false, // chưa Có Lỗi
+            songaynamvien: false,
+            capbac: false,
+            gioitinh: false,
+        }
         // kiểm Tra nếu họ Tên trống
         let flag = false
         if(!$scope.inputValue || !$scope.inputValue.ten){
@@ -28,36 +45,18 @@ window.InfoController = function($scope,$routeParams){
             $scope.kiemTraDuLieu.songaynamvien = true;// Có Lỗi
             flag = true
         }
-           $scope.gender = ($scope.inputValue.gioitinh == 1)? "Ông" : "Bà";
-        if($scope.inputValue.capbac == 1 && $scope.name == "Nhân_viên"){
-            $scope.tongtien = $scope.inputValue.songaynamvien * 1200;
+        if(!$scope.inputValue || !$scope.inputValue.gioitinh){
+            $scope.kiemTraDuLieu.gioitinh = true;// Có Lỗi
+            flag = true
         }
-        if($scope.inputValue.capbac == 2 && $scope.name == "Nhân_viên"){
-            $scope.tongtien = $scope.inputValue.songaynamvien * 2400;
+        if(!$scope.inputValue || !$scope.inputValue.capbac){
+            $scope.kiemTraDuLieu.capbac = true;// Có Lỗi
+            flag = true
         }
-        if($scope.inputValue.capbac == 3 && $scope.name == "Nhân_viên"){
-            $scope.tongtien = $scope.inputValue.songaynamvien * 3600;
-        }
-        if($scope.inputValue.capbac == 1 && $scope.name == "Cán_bộ"){
-            $scope.tongtien = $scope.inputValue.songaynamvien * 2460;
-        }
-        if($scope.inputValue.capbac == 2 && $scope.name == "Cán_bộ"){
-            $scope.tongtien = $scope.inputValue.songaynamvien * 3600;
-        }
-        if($scope.inputValue.capbac == 3 && $scope.name == "Cán_bộ"){
-            $scope.tongtien = $scope.inputValue.songaynamvien * 5800;
-        }
-        if($scope.inputValue.capbac == 1 && $scope.name == "Quản_lý"){
-            $scope.tongtien = $scope.inputValue.songaynamvien * 4000;
-        }
-        if($scope.inputValue.capbac == 2 && $scope.name == "Quản_lý"){
-            $scope.tongtien = $scope.inputValue.songaynamvien * 4100;
-        }
-        if($scope.inputValue.capbac == 3 && $scope.name == "Quản_lý"){
-            $scope.tongtien = $scope.inputValue.songaynamvien * 4200;
-        }
-        if(!flag){
-            $scope.hienthi = $scope.gender +" " + $scope.inputValue.ten + " Cấp Bậc " + $scope.inputValue.capbac + " là " + $scope.name + " Được Chi Trả " + $scope.tongtien + " Tiền Viện"
-        }
+
+       $scope.gender = ($scope.inputValue.gioitinh == 1)? "Ông" : "Bà";
+       if(!flag){
+        $scope.hienthi = $scope.gender +" " + $scope.inputValue.ten + " là " + $scope.per + " Cấp Bậc " + $scope.inputValue.capbac + " Được Chi Trả " + $scope.tien[$scope.inputValue.capbac-1]* $scope.inputValue.songaynamvien + " Tiền Viện"
+       }
     }
 }
