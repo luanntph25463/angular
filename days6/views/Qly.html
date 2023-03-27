@@ -1,0 +1,52 @@
+<form>
+    <h1 class="h1 text-center text-success">Chương Trình Quản Lý Sản Phẩm</h1>
+
+    <h1 class="h3 alert alert-danger">{{alert}}</h1>
+    <div>
+      <label for="" class="form-label">Tên Sản Phẩm</label>
+      <input type="text" class="form-control" ng-model="inputValue.ten">
+      <p ng-if="kiemTraDuLieu.ten == true" class="alert alert-danger">Vui Lòng Nhập Họ Tên Sản Phẩm</p>
+    </div>
+    <div>
+        <label for="" class="form-label">Màu Sắc</label>
+        <input type="text" class="form-control" ng-model="inputValue.color">
+        <p ng-if="kiemTraDuLieu.color == true" class="alert alert-danger">Vui Lòng Nhập Màu Sắc</p>
+      </div>
+      <label for="" class="form-label">Trạng Thái</label>
+      <select class="form-select" ng-model="inputValue.status" >
+        <option value="1"  selected="selected">Kích Hoạt</option>
+        <option value="2" selected="selected">Khóa</option>
+      </select>
+    </div>
+    <p ng-if="kiemTraDuLieu.status == true" class="alert alert-danger">Vui Lòng Chọn Trạng Thái</p>
+    <div>
+      <label for="" class="form-label">Giá Tiền</label>
+      <input type="text" class="form-control" ng-model="inputValue.price">
+      <p ng-if="kiemTraDuLieu.price == true" class="alert alert-danger">Vui Lòng Không Để Trống  Số Tiền Và Số Âm</p>
+    </div>
+    <div class="text-center m-5">
+      <button ng-click="onSubmitForm()" class="btn btn-primary m-a px-5 py-2">Lưu</button>
+    </div>
+  
+  </form>
+  <table class="table table-striped">
+    <tr>
+      <th>ID</th>
+      <th>Tên</th>
+      <th>Màu Sắc</th>
+      <th>Trạng Thái</th>
+      <th>Giá</th>
+      <th colspan="2" class="text-center mx-5">Action</th>
+    </tr>
+    <tr ng-repeat="ds in danhSach">
+      <td>{{ds.id}}</td>
+      <td>{{ds.ten}}</td>
+      <td>{{ds.color}}</td>
+      <td><span ng-if="ds.status  == 1">Mở</span>
+        <span ng-if="ds.status == 2">Khóa</span>
+       </td>
+      <td>{{ds.price}}</td>
+      <td><button ng-click="onEdit(ds.id)" class="btn btn-success">Sửa</button></td>
+      <td><button ng-click="onDelete(ds.id)" class="btn btn-danger">Xóa</button></td>
+    </tr>
+  </table>

@@ -55,8 +55,25 @@ window.InfoController = function($scope,$routeParams){
         }
 
        $scope.gender = ($scope.inputValue.gioitinh == 1)? "Ông" : "Bà";
+       // không lỗi Xử Lý Thêm
        if(!flag){
+        // Xử Lý Thêm
+        var ds = $scope.danhSach;
+        //  fake id tăng tự dộng
+        var newID = ds.length > 0 ? ds[ds.length - 1].id + 1 : 1;
+        var newItem = {
+            id:newID,
+            ten:$scope.inputValue.ten,
+            tuoi:$scope.inputValue.tuoi,
+        }// Đây là Cục Đối tượng
         $scope.hienthi = $scope.gender +" " + $scope.inputValue.ten + " là " + $scope.per + " Cấp Bậc " + $scope.inputValue.capbac + " Được Chi Trả " + $scope.tien[$scope.inputValue.capbac-1]* $scope.inputValue.songaynamvien + " Tiền Viện"
        }
     }
+    $scope.danhSach = [
+        {id:1,ten:"ABC",tuoi:20},
+        {id:2,ten:"ABC",tuoi:201},
+        {id:3,ten:"ABC",tuoi:203},
+        {id:4,ten:"ABC",tuoi:203},
+        {id:5,ten:"ABC",tuoi:204},
+    ]
 }
