@@ -22,7 +22,7 @@
     <div>
       <label for="" class="form-label">Giá Tiền</label>
       <input type="text" class="form-control" ng-model="inputValue.price">
-      <p ng-if="kiemTraDuLieu.price == true" class="alert alert-danger">Vui Lòng Không Để Trống  Số Tiền Và Số Âm</p>
+      <p ng-if="kiemTraDuLieu.price == true" class="alert alert-danger">Vui Lòng Không Để Trống Số Tiền, Nhập Số Và Giá Tiền Không Âm</p>
     </div>
     <div class="text-center m-5">
       <button ng-click="onSubmitForm()" class="btn btn-primary m-a px-5 py-2">Lưu</button>
@@ -42,7 +42,7 @@
       <td>{{ds.id}}</td>
       <td>{{ds.ten}}</td>
       <td>{{ds.color}}</td>
-      <td><span ng-if="ds.status  == 1">Mở</span>
+      <td><span ng-if="ds.status  == 1">Kích Hoạt</span>
         <span ng-if="ds.status == 2">Khóa</span>
        </td>
       <td>{{ds.price}}</td>

@@ -13,7 +13,9 @@ window.QlySanPhamController = function($scope,$routeParams){
             price: false,
             color: false,
             status: false,
+            
         }
+        const isNumeric = /^\d+$/;
         // kiểm Tra nếu họ Tên trống
         let flag = false
         if(!$scope.inputValue || !$scope.inputValue.ten){
@@ -28,15 +30,15 @@ window.QlySanPhamController = function($scope,$routeParams){
             $scope.kiemTraDuLieu.status = true;// Có Lỗi
             flag = true
         }
+      
+        if(isNumeric.test($scope.inputValue.price) == false){
+            $scope.kiemTraDuLieu.price = true;// Có Lỗi
+            flag = true
+        }
         if(!$scope.inputValue || $scope.inputValue.price <= 0){
             $scope.kiemTraDuLieu.price = true;// Có Lỗi
             flag = true
         }
-        if(!$scope.inputValue || !$scope.inputValue.price){
-            $scope.kiemTraDuLieu.price = true;// Có Lỗi
-            flag = true
-        }
-
        // không lỗi Xử Lý Thêm
        if(!flag){
         // Xử Lý Thêm

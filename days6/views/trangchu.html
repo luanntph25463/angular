@@ -1,3 +1,418 @@
-<div>
-  <h1>{{title}}</h1>
+<div class=" bg-body-secondary ">
+  <div class="row">
+      <h1 class="text-primary mt-3 text-[#2e3192]  text-center">PHIẾU ĐĂNG KÝ HỌC</h1>
+  </div>
+  <div class="container p-4 rounded bg-white">
+      <div class="m-5">
+          <h3 class="h5  text-primary">
+              THÔNG TIN THÍ SINH
+          </h3>
+          <div class="form-group">
+              <div class="row mb-3">
+                  <div class=" col-lg-3 col-md-6">
+                      <label for="exampleInputEmail1" class="form-label">Họ Và Tên</label>
+                      <input type="text" class="form-control" ng-model="inputValue.ten" id="exampleInputEmail1" aria-describedby="emailHelp"
+                          placeholder="Họ Và Tên">
+      <p ng-if="kiemTraDuLieu.ten == true" class="alert alert-danger">Vui Lòng Nhập Họ Tên Sản Phẩm</p>
+                  </div>
+                  <div class="col-md-6 col-lg-3">
+                      <label for="exampleInputEmail1" class="form-label">Ngày Sinh</label>
+                      <input type="date" class="form-control" ng-model="inputValue.date" id="exampleInputEmail1" aria-describedby="emailHelp"
+                          placeholder="DD/MM/YYYY">
+      <p ng-if="kiemTraDuLieu.date == true" class="alert alert-danger">Vui Lòng Nhập Ngày Sinh</p>
+
+                  </div>
+                  <div class="col-md-6 col-lg-3">
+                      <label for="exampleInputEmail1" class="form-label">Giới Tính</label>
+                      <select class="form-select" ng-model="inputValue.gender" aria-label="Default select example">
+                          <option value="1">Nam</option>
+                          <option value="2">Nữ</option>
+                      </select>
+      <p ng-if="kiemTraDuLieu.gender == true" class="alert alert-danger">Vui Lòng Chọn Giới Tính</p>
+
+                  </div>
+                  <div class="col-md-6 col-lg-3">
+                      <label for="exampleInputEmail1" class="form-label">Dân Tộc</label>
+                      <input type="text" class="form-control" ng-model="inputValue.dantoc" id="exampleInputEmail1" aria-describedby="emailHelp"
+                          placeholder="Kinh">
+      <p ng-if="kiemTraDuLieu.dantoc == true" class="alert alert-danger">Vui Lòng Nhập Dân Tộc</p>
+
+                  </div>
+              </div>
+              <div class="row mb-3">
+                  <div class="col-md-6 col-lg-4">
+                      <label for="exampleInputEmail1" class="form-label">Số CCCD/Chứng minh nhân dân </label>
+                      <input type="text" class="form-control" ng-model="inputValue.cccd" id="exampleInputEmail1" aria-describedby="emailHelp"
+                          placeholder="0123456789">
+      <p ng-if="kiemTraDuLieu.cccd == true" class="alert alert-danger">Vui Lòng Nhập CCCD</p>
+
+                  </div>
+                  <div class="col-md-6 col-lg-4">
+                      <label for="exampleInputEmail1" class="form-label">Ngày Cấp</label>
+                      <input type="date" class="form-control" ng-model="inputValue.ngaycap" id="exampleInputEmail1" aria-describedby="emailHelp"
+                          placeholder="DD/MM/YYYY">
+      <p ng-if="kiemTraDuLieu.ngaycap == true" class="alert alert-danger">Vui Lòng Nhập Ngày Cấp CCCD</p>
+
+                  </div>
+                  <div class="col-md-6 col-lg-4">
+                      <label for="exampleInputEmail1" class="form-label">Nơi Cấp</label>
+                      <input type="text" class="form-control" ng-model="inputValue.noicap" id="exampleInputEmail1" aria-describedby="emailHelp"
+                          placeholder="Hà Nội,Thành Phố Hồ Chí Minh">
+      <p ng-if="kiemTraDuLieu.noicap == true" class="alert alert-danger">Vui Lòng Nhập Nơi Cấp CCCD</p>
+
+                  </div>
+                  <div class="mt-4">
+                      <label for="exampleInputEmail1" class="form-label">Hộ khẩu thường trú (Điền thông tin đầy đủ
+                          như trong sổ hộ khẩu)</label>
+
+                      <div class="row">
+                          <div class=" col-lg-3 col-md-6">
+                              <select class="form-select" ng-model="inputValue.hktp" aria-label="Default select example">
+                                  <option value="1">Hà Nội</option>
+                                  <option value="2">Đà Nẵng</option>
+                              </select>
+      <p ng-if="kiemTraDuLieu.hktp == true" class="alert alert-danger">Vui Lòng Chọn TP</p>
+
+                          </div>
+                          <div class="col-md-6 col-lg-3">
+                              <select class="form-select" ng-model="inputValue.hkqh" aria-label="Default select example">
+                                  <option value="1">Thường Tín</option>
+                                  <option value="2">Bắc từ Liêm</option>
+                              </select>
+      <p ng-if="kiemTraDuLieu.hkqh == true" class="alert alert-danger">Vui Lòng Chọn Quận/Huyện</p>
+
+                          </div>
+                          <div class="col-md-6 col-lg-3">
+                              <select class="form-select" ng-model="inputValue.xa" aria-label="Default select example">
+                                  <option value="1">Dũng Tiến</option>
+                                  <option value="2">Phố Tía</option>
+                              </select>
+      <p ng-if="kiemTraDuLieu.xa == true" class="alert alert-danger">Vui Lòng Chọn Xã</p>
+                          </div>
+                          <div class="col-md-6 col-lg-3">
+                              <input type="text" class="form-control" ng-model="inputValue.sonha" id="exampleInputEmail1"
+                                  aria-describedby="emailHelp" placeholder="Số Nhà,đường,ngõ,xóm">
+      <p ng-if="kiemTraDuLieu.sonha == true" class="alert alert-danger">Vui Lòng Nhập Số Nhà</p>
+
+                          </div>
+                      </div>
+                      <div class="row mt-4">
+                          <div class=" col-lg-3 col-md-6">
+                              <label for="exampleInputEmail1" class="form-label">Số Điện Thoại Thí Sinh</label>
+                              <input type="text" class="form-control" ng-model="inputValue.sdt"  id="exampleInputEmail1"
+                                  aria-describedby="emailHelp" placeholder="0334590019">
+      <p ng-if="kiemTraDuLieu.sdt == true" class="alert alert-danger">Vui Lòng Nhập Đúng Định Dạng SĐT</p>
+
+                          </div>
+                          <div class="col-md-6 col-lg-3">
+                              <label for="exampleInputEmail1"  class="form-label">Email Thí Sinh</label>
+                              <input type="email" class="form-control" ng-model="inputValue.email" id="exampleInputEmail1"
+                                  aria-describedby="emailHelp" placeholder="example@gmail.com">
+      <p ng-if="kiemTraDuLieu.email == true" class="alert alert-danger">Vui Lòng Nhập Email</p>
+
+                          </div>
+                          <div class=" col-lg-3 col-md-6">
+                              <label for="exampleInputEmail1" class="form-label">Họ tên phụ huynh
+                              </label>
+                              <input type="text" class="form-control" ng-model="inputValue.htph" id="exampleInputEmail1"
+                                  aria-describedby="emailHelp" placeholder="họ và tên">
+      <p ng-if="kiemTraDuLieu.htph == true" class="alert alert-danger">Vui Lòng Nhập Họ Tên Phụ Huynh</p>
+
+                          </div>
+                          <div class="col-md-6 mt-2 col-lg-3">
+                              <label for="exampleInputEmail1" class="form-label">Số Điện Thoại phụ huynh
+                              <input type="text" class="form-control" ng-model="inputValue.sdtph" id="exampleInputEmail1"
+                                  aria-describedby="emailHelp" placeholder="0334590019">
+      <p ng-if="kiemTraDuLieu.sdtph == true" class="alert alert-danger">Vui Lòng Nhập Đúng Định Dạng SĐT</p>
+
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="m-5">
+          <h3 class="h5 text-primary">
+              THÔNG TIN ĐĂNG KÝ TRƯỜNG CAO ĐẲNG FPT POLYTECHNIC
+          </h3>
+          <div class="form-group">
+              <div class="row mb-3">
+                  <div class="col-md-6">
+                      <label for="exampleInputEmail1" class="form-label">Cơ sở nhập học </label>
+                      <select class="form-select" ng-model="inputValue.csnh"  aria-label="Default select example">
+                          <option value="1">Hà Nội</option>
+                          <option value="2">TPHCM</option>
+                      </select>
+      <p ng-if="kiemTraDuLieu.csnh == true" class="alert alert-danger">Vui Lòng Chọn Cơ Sở</p>
+
+                  </div>
+                  <div class="col-md-6">
+                  </div>
+              </div>
+              <div class="row mb-3">
+                  <div class="col-md-6 col-lg-3">
+                      <label for="exampleInputEmail1" class="form-label">Nguyện vọng thứ nhất </label>
+                      <select class="form-select" ng-model="inputValue.nvt1" aria-label="Default select example">
+                          <option value="1">CNTT</option>
+                          <option value="2">UDPM</option>
+                      </select>
+      <p ng-if="kiemTraDuLieu.nvt1 == true" class="alert alert-danger">Vui Lòng Chọn Nguyện Vọng</p>
+
+                  </div>
+                  <div class="col-md-6 col-lg-3 mt-2">
+                      <label for="exampleInputEmail1" class="form-label">Ngành</label>
+
+                      <select class="form-select" ng-model="inputValue.nganh1" aria-label="Default select example">
+                          <option value="1">Công Nghệ Thông Tiin</option>
+                          <option value="2">UDPM</option>
+                      </select>
+                      <p ng-if="kiemTraDuLieu.nganh1 == true" class="alert alert-danger">Vui Lòng Chọn Nguyện Vọng</p>
+
+                  </div>
+                  <div class="col-md-6 col-lg-3">
+                      <label for="exampleInputEmail1" class="form-label">Nguyện vọng thứ Hai </label>
+                      <select class="form-select" ng-model="inputValue.nvt2" aria-label="Default select example">
+                        <option value="1">CNTT</option>
+                        <option value="2">UDPM</option>
+                      </select>
+                      <p ng-if="kiemTraDuLieu.nvt2 == true" class="alert alert-danger">Vui Lòng Chọn Nguyện Vọng</p>
+
+                  </div>
+                  <div class="col-md-6 col-lg-3 mt-2">
+                      <label for="exampleInputEmail1" class="form-label"> Ngành</label>
+                      <select class="form-select" ng-model="inputValue.nganh2" aria-label="Default select example">
+                        <option value="1">Công Nghệ Thông Tiin</option>
+                        <option value="2">UDPM</option>
+                      </select>
+                      <p ng-if="kiemTraDuLieu.nganh2 == true" class="alert alert-danger">Vui Lòng Chọn Nguyện Vọng</p>
+
+                  </div>
+              </div>
+              <div class="row mb-3">
+                  <div class="col-md-6">
+                      <label for="exampleInputEmail1" class="form-label">Năm tốt nghiệp THPT hoặc tương đương
+                      </label>
+                      <select class="form-select" ng-model="inputValue.namtn" aria-label="Default select example">
+                          <option value="1">2018</option>
+                          <option value="2">2020</option>
+                      </select>
+                      <p ng-if="kiemTraDuLieu.namtn == true" class="alert alert-danger">Vui Lòng Nhập Năm Tốt Nghiệp</p>
+
+                  </div>
+                  <div class="col-md-6">
+                      <label for="exampleInputEmail1" class="form-label">Trường tốt nghiệp THPT hoặc tương đương
+                      </label>
+                      <input type="text" class="form-control"  ng-model="inputValue.ttn" id="exampleInputEmail1" aria-describedby="emailHelp"
+                          placeholder="Trường">
+                          <p ng-if="kiemTraDuLieu.ttn == true" class="alert alert-danger">Vui Lòng Chọn Trường Tốt Nghiệp</p>
+
+                  </div>
+              </div>
+              <div class="row mb-3">
+                  <div class="col-md-6 col-lg-4">
+                      <label for="exampleInputEmail1" class="form-label">Nơi Tốt Nghiệp
+                      </label>
+                      <select class="form-select" ng-model="inputValue.ntn" aria-label="Default select example">
+                          <option value="1">Hà Nội</option>
+                          <option value="2">TPHCM</option>
+                      </select>
+                      <p ng-if="kiemTraDuLieu.ntn == true" class="alert alert-danger">Vui Lòng Nhập Nơi Tốt Nghiệp</p>
+
+                  </div>
+                  <div class="col-md-6 col-lg-4 mt-2">
+                      <label for="exampleInputEmail1" class="form-label">Quận Huyện
+                      </label>
+                      <select class="form-select" ng-model="inputValue.qhtn"  aria-label="Default select example">
+                          <option value="1">Thường Tín</option>
+                          <option value="2">Bắc Từ Liêm</option>
+                      </select>
+                      <p ng-if="kiemTraDuLieu.qhtn == true" class="alert alert-danger">Vui Lòng Chọn Nguyện Vọng</p>
+                  </div>
+                  <div class="col-md-6 col-lg-4 mt-2">
+                      <label for="exampleInputEmail1"    class="form-label">Phường Xã
+                      </label>
+                      <select class="form-select" ng-model="inputValue.xtn" aria-label="Default select example">
+                          <option value="1">Dũng Tiến</option>
+                          <option value="2">Phố Tía</option>
+                      </select>
+                      <p ng-if="kiemTraDuLieu.xtn == true" class="alert alert-danger">Vui Lòng Chọn Xã Tốt Nghiệp</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="m-5 ">
+          <div>
+              <h1 class="h5 text-primary">THÔNG TIN NHẬN GIẤY BÁO KẾT QUẢ</h1>
+          </div>
+          <div class="row mb-5">
+              <div class="col-md-6">
+                  <label for="exampleInputEmail1" class="form-label">Người Nhận</label>
+                  <div class="form-check">
+                      <input class="form-check-input" type="checkbox" ng-model="inputValue.nn" ng-true-value="'Thí Sinh'" ng-false-value="'Phụ Huynh'" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                          Thí Sinh
+                      </label>
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <label for="exampleInputEmail1" class="form-label">Địa Chỉ Nhận</label>
+                  <div class="form-check">
+                      <input class="form-check-input"  type="checkbox" ng-model="inputValue.dcn"  ng-true-value="'dchktt'" ng-false-value="'khac'" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                          Địa chỉ hộ khẩu thường trú
+                      </label>
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <label for="exampleInputEmail1" class="form-label"></label>
+                  <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                          Phụ huynh/Người bảo trợ
+                      </label>
+                      <p ng-if="kiemTraDuLieu.nn == true" class="alert alert-danger">Vui Lòng Chọn Người Nhận</p>
+
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <label for="exampleInputEmail1" class="form-label"></label>
+                  <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                          Khác
+                      </label>
+                      <p ng-if="kiemTraDuLieu.dcn == true" class="alert alert-danger">Vui Lòng Chọn Địa Chỉ Nhận</p>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div>
+          <div class="mt-5 mb-5">
+              <h1 class="h5 text-primary">TẢI LÊN GIẤY TỜ XÁC THỰC</h1>
+              <div class="row">
+                  <div class="col-md-6 col-lg-3">
+                      <label for="">Ảnh CMT/CCCD mặt trước</label>
+                      <br>
+                      <img width="100%" src="./libs/cccd-mt.png" alt="">
+                      <input type="file">
+                  </div>
+                  <div class="col-md-6 col-lg-3">
+                      <label for="">Ảnh CMT/CCCD mặt Sau</label>
+                      <br>
+                      <img width="100%" src="./libs/cccd-mt.png" alt="">
+                      <input type="file">
+                  </div>
+                  <div class="col-md-6 col-lg-6">
+                      <label for="">Bản sao công chứng Bằng tốt nghiệp THPT</label>
+                      <br>
+                      <img width="100%" height="150" src="./libs/bang-tot-nghiep-thpt.png" alt="">
+                      <input type="file">
+                  </div>
+              </div>
+              <div class="row mt-5">
+                  <div class="col-md-6">
+                      <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                          <label class="form-check-label" for="flexCheckDefault">
+                              Tôi xin cam đoan những lời khai của tôi trên phiếu đăng ký này là đúng sự thật. Nếu sai
+                              tôi hoàn toàn chịu trách nhiệm và nhận xử lý theo Quy chế tuyển sinh cao đẳng hiện hành
+                          </label>
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+
+                  </div>
+                  <div class="col-md-6">
+                      <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                          <label class="form-check-label" for="flexCheckDefault">
+                              Tôi đã đọc kỹ và cam kết tuân thủ Quy định tài chính của nhà trường </label>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="text-center">
+      <button ng-click="onSubmitForm()" class="btn btn-dark te">Gửi Hồ Sơ Đăng Ký</button>
+      </div>
+  </div>
+  <div>
+    <table class="table table-striped">
+        <tr>
+          <th>ID</th>
+          <th>Tên</th>
+          <th>Ngày Sinh</th>
+          <th>Giới Tính</th>
+          <th>Dân Tộc</th>
+          <th>CCCD</th>
+          <th>Ngày Cấp</th>
+          <th>Nơi Cấp</th>
+          <th>Hộ Khẩu Thường Trú</th>
+          <th>SĐT</th>
+          <th>Email</th>
+          <th>H&T Phụ Huynh</th>
+          <th>SĐT PH</th>
+          <th>Cơ Sở Nhập Học</th>
+          <th>NV1</th>
+          <th>NV2</th>
+          <th>Năm Tốt Nghiệp</th>
+          <th>Trường Tốt Nghiệp</th>
+          <th>Nơi Tốt Nghiệp</th>
+          <th>Người Nhận</th>
+          <th>Địa Chỉ Nhận</th>
+    
+          <th colspan="2" class="text-center mx-5">Action</th>
+        </tr>
+        <tr ng-repeat="ds in danhSach">
+          <td>{{ds.id}}</td>
+          <td>{{ds.ten}}</td>
+          <td>{{ds.date}}</td>
+          <td><span ng-if="ds.gender  == 1">NAM</span>
+            <span ng-if="ds.gender == 2">Nữ</span>
+           </td>
+          <td>{{ds.dantoc}}</td>
+          <td>{{ds.cccd}}</td>
+          <td>{{ds.ngaycap}}</td>
+          <td>{{ds.noicap}}</td>
+          <td><span ng-if="ds.hktp  == 1">Hà Nội</span>
+            <span ng-if="ds.hktp == 2">Đà Nẵng</span>
+            <span ng-if="ds.hkqh  == 1">Thường tín</span>
+            <span ng-if="ds.hkqh == 2">Bắc Từ Liêm</span>
+            <span ng-if="ds.xa  == 2">Phố tía</span>
+            <span ng-if="ds.hkqh == 1">Dũng Tiến</span>
+            {{ds.sonha}}</td>
+          <td>{{ds.sdt}}</td>
+          <td>{{ds.email}}</td>
+          <td>{{ds.htph}}</td>
+          <td>{{ds.sdtph}}</td>
+          <td>
+            <span ng-if="ds.csnh  == 1">Hà Nội</span>
+            <span ng-if="ds.csnh == 2">TP HCM</span></td>
+          <td>
+            <span ng-if="ds.nvt1  == 1">CNTT</span>
+            <span ng-if="ds.nvt1 == 2">UDPM</span>
+            <span ng-if="ds.nganh1  == 1">CNTT</span>
+            <span ng-if="ds.nganh1 == 2">UDPM</span></td>
+          <td>      <span ng-if="ds.nvt2  == 1">CNTT</span>
+            <span ng-if="ds.nvt2 == 2">UDPM</span>
+            <span ng-if="ds.nganh2  == 1">CNTT</span>
+            <span ng-if="ds.nganh2 == 2">UDPM</span>
+        </td>
+          <td>{{ds.namtn}}</td>
+          <td>{{ds.ttn}}</td>
+          <td> <span ng-if="ds.ntn  == 1">Hà Nội</span>
+            <span ng-if="ds.ntn == 2">TP HCM</span>
+            <span ng-if="ds.qhtn  == 1">Thường Tín</span>
+            <span ng-if="ds.qhtn == 2">Bắc Từ Liêm</span>
+            <span ng-if="ds.xtn  == 1">Dũng Tiến</span>
+            <span ng-if="ds.xtn == 2">Phố Tía</span>
+        </td>
+          <td>{{ds.nn}}</td>
+          <td>{{ds.dcn}}</td>
+          <td><button ng-click="onEdit(ds.id)" class="btn btn-success">Sửa</button></td>
+          <td><button ng-click="onDelete(ds.id)" class="btn btn-danger">Xóa</button></td>
+        </tr>
+      </table>
+  </div>
 </div>

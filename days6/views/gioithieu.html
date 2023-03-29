@@ -25,8 +25,8 @@
 
   <div>
     <label for="" class="form-label">Số Ngày Nằm Viện</label>
-    <input type="number" class="form-control" ng-model="inputValue.songaynamvien">
-    <p ng-if="kiemTraDuLieu.songaynamvien == true" class="alert alert-danger">Vui Lòng Nhập Số Ngày Nằm Viện</p>
+    <input type="text" class="form-control" ng-model="inputValue.songaynamvien">
+    <p ng-if="kiemTraDuLieu.songaynamvien == true" class="alert alert-danger">Vui Lòng Nhập Số Ngày Nằm Viện, Là 1 Chữ Số</p>
   </div>
   <div class="text-center mt-5">
     <button ng-click="onSubmitForm()" class="btn btn-primary m-a px-5 py-2">Kiểm Tra</button>
