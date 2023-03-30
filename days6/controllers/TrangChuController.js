@@ -320,9 +320,13 @@ window.TrangChuController = function($scope){
         $scope.editId = 0;
     }
    
-    $scope.onDelete = function (editId) {
-        $scope.danhSach.splice($scope.editId, 1);
-        $scope.alert = "Xóa Thành Công  Sản Phẩm";
-
+    $scope.onDelete = function (deleteId) {
+        let confirm = window.confirm("Bạn xóa muốn xóa không ?");
+        if(confirm) {
+            //xóa 
+            $scope.danhSach  = $scope.danhSach.filter(function(item){
+                return item.id !== deleteId;
+            });
+        }
     }
 }

@@ -97,8 +97,13 @@ window.danhSachController = function($scope,$routeParams){
             tuoi : editItem.tuoi
         }
     }
-    $scope.onDelete = function (editId) {
-        $scope.danhSach.splice($scope.editId, 1);
-        $scope.clear();
+    $scope.onDelete = function (deleteId) {
+        let confirm = window.confirm("Bạn xóa muốn xóa không ?");
+        if(confirm) {
+            //xóa 
+            $scope.danhSach  = $scope.danhSach.filter(function(item){
+                return item.id !== deleteId;
+            });
+        }
     }
 }
