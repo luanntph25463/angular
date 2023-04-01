@@ -1,0 +1,55 @@
+<form>
+    <h1 class="h3 alert alert-danger">{{alert}}</h1>
+    <div>
+      <label for="" class="form-label">Họ Tên</label>
+      <input type="text" class="form-control" ng-model="inputValue.ten">
+      <p ng-if="kiemTraDuLieu.ten == true" class="alert alert-danger">Vui Lòng Nhập Họ Tên</p>
+    </div>
+    <div class="form-group">
+      <label for="" class="form-label">Giới Tính</label>
+      </br>
+      <input checked="checked" name="gioitinh" type="radio" class="form-radio" ng-model="inputValue.gender"
+        value="1" />Nam
+      <input name="gioitinh" type="radio" ng-model="inputValue.gender" class="form-radio" value="2" />Nữ
+      <p ng-if="kiemTraDuLieu.gender == true" class="alert alert-danger">Vui Lòng Nhập Họ Giới Tính</p>
+    </div>
+    <div>
+      <label for="" class="form-label">Cấp Bậc</label>
+      <select class="form-select" ng-model="inputValue.capbac">
+        <option value="1">Cấp Bậc 1</option>
+        <option value="2" selected>Cấp Bậc 2</option>
+        <option value="3">Cấp Bậc 3</option>
+      </select>
+    </div>
+    <p ng-if="kiemTraDuLieu.capbac == true" class="alert alert-danger">Vui Lòng Chọn Cấp Bậc</p>
+  
+    <div>
+      <label for="" class="form-label">Số Tuổi</label>
+      <input type="number" class="form-control" ng-model="inputValue.tuoi">
+      <p ng-if="kiemTraDuLieu.tuoi == true" class="alert alert-danger">Vui Lòng Nhập Số Tuổi</p>
+    </div>
+    <div class="text-center mt-5">
+      <button ng-click="onSubmitForm()" class="btn btn-primary m-a px-5 py-2">Kiểm Tra</button>
+    </div>
+  
+  </form>
+  <table class="table table-striped">
+    <tr>
+      <th>ID</th>
+      <th>Tên</th>
+      <th>Giới Tính</th>
+      <th>Cấp Bậc</th>
+      <th>Tuổi</th>
+      <th colspan="2" class="text-center">Action</th>
+    </tr>
+    <tr ng-repeat="ds in danhSach">
+      <td>{{ds.id}}</td>
+      <td>{{ds.ten}}</td>
+      <td><span ng-if="ds.gender == 1">Nam</span>
+        <span ng-if="ds.gender == 2">Nữ</span></td>
+      <td>{{ds.capbac}}</td>
+      <td>{{ds.tuoi}}</td>
+      <td><button ng-click="onEdit(ds.id)" class="btn btn-success">Sửa</button></td>
+      <td><button ng-click="onDelete(ds.id)" class="btn btn-danger">Xóa</button></td>
+    </tr>
+  </table>

@@ -1,0 +1,43 @@
+{
+  "rooms": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "ten": "saaaa",
+      "gender": "2",
+      "Capbac": "3",
+      "tuoi": 66,
+      "id": 12,
+      "capbac": "1"
+    },
+    {
+      "ten": "s",
+      "tuoi": 2,
+      "gender": "2",
+      "capbac": "2",
+      "id": 13
+    },
+    {
+      "ten": "s",
+      "tuoi": 2,
+      "gender": "1",
+      "capbac": "2",
+      "id": 14
+    },
+    {
+      "ten": "s",
+      "tuoi": 23,
+      "gender": "1",
+      "capbac": "3",
+      "id": 15
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
